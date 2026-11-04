@@ -1,5 +1,5 @@
 node {
-  git branch 'main' , url: 'https://github.com/EslamAboalnaga22/Demo-Jenkins.git'
+  git branch: 'main' , url: 'https://github.com/EslamAboalnaga22/Demo-Jenkins.git'
 
   stage('build'){
     try {
