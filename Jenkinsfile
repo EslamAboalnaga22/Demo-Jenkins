@@ -1,23 +1,21 @@
-node {
-  git branch: 'main' , url: 'https://github.com/EslamAboalnaga22/Demo-Jenkins.git'
+pipeline {
+  agent any
 
-  stage('build'){
-    try {
-      sh'echo "build stage"'
+  stages{
+    stage('build'){
+      steps{
+        script{
+          echo "build in progress"
+        }
+      }
     }
-    catch(Exception e){
-      sh'echo "exception found"'
-      throw e
+
+    stage('test'){
+      steps{
+        script{
+          echo "test in progress"
+        }
+      }
     }
   }
-
-   stage('test'){
-    if(env. BRANCH_NAME == "feat"){
-      sh'echo "test stage"'
-    }
-    else{
-      sh'echo "skip test stage"'
-    }
-   }
 }
-
